@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Video */
 
-$this->title = $model->Id;
+$this->title = $model->Uuid;
 $this->params['breadcrumbs'][] = ['label' => 'Videos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -14,6 +14,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
+    
+    <script src='//cameratag.com/api/v4/js/cameratag.js' type='text/javascript'></script>
+    <video id='cameraRecordForm' data-uuid='<?= $model->Uuid ?>'></video>
+    <br>
+    
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->Id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->Id], [
@@ -24,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-
+    
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
