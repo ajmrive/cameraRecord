@@ -18,7 +18,7 @@
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "dektrium/yii2-user": "*"
+        "amnah/yii2-user": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
