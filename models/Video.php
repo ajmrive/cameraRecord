@@ -32,7 +32,7 @@ class Video extends \yii\db\ActiveRecord
         return [
             [['Uuid'], 'required'],
             [['Timestamp'], 'safe'],
-            [['Uuid','Thumbnail', 'SmallThumbnail', 'Url'], 'string', 'max' => 4083],
+            [['Uuid','Thumbnail', 'SmallThumbnail', 'Url'], 'string', 'max' => 2083],
             [['Uuid'], 'unique']
         ];
     }

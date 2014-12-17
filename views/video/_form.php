@@ -26,27 +26,27 @@ $this->registerJs("
       console.log(myVideo.created_at);
       j_noConflict('#timestamp-video').val(myVideo.created_at);
       
+//
+//      var formats = JSON.parse(JSON.stringify(myVideo.formats.qvga.thumbnail_url));
+//      console.log(formats);
+//
+//      var thumbnail_url = formats['thumbnail_url'];
+//      console.log(thumbnail_url);
+//      
+//      var small_thumbnail_url = myVideo.formats.qvga.small_thumbnail_url;
+//      console.log(small_thumbnail_url);
+//      
+//      var video_url = formats.video_url;
+//      console.log(myVideo.video_url);
+//      
+//
+//
+//
+//      j_noConflict('#thumbnail-video').val(myVideo.formats.thumbnail_url);
+//      j_noConflict('#smallThumbnail-video').val(myVideo.formats.small_thumbnail_url);
+//      j_noConflict('#url-video').val(myVideo.formats.video_url);      
 
-      var formats = JSON.parse(JSON.stringify(myVideo.formats.qvga.thumbnail_url));
-      console.log(formats);
-
-      var thumbnail_url = formats['thumbnail_url'];
-      console.log(thumbnail_url);
-      
-      var small_thumbnail_url = myVideo.formats.qvga.small_thumbnail_url;
-      console.log(small_thumbnail_url);
-      
-      var video_url = formats.video_url;
-      console.log(myVideo.video_url);
-      
-
-
-
-      j_noConflict('#thumbnail-video').val(myVideo.formats.thumbnail_url);
-      j_noConflict('#smallThumbnail-video').val(myVideo.formats.small_thumbnail_url);
-      j_noConflict('#url-video').val(myVideo.formats.video_url);      
-
-      //j_noConflict('#save-video').click();
+      j_noConflict('#save-video').click();
     
   }); 
 
@@ -57,14 +57,14 @@ $this->registerJs("
 
 
 <!--<script src='//cameratag.com/api/v4/js/cameratag.js' type='text/javascript'></script>-->
-<camera id='cameraRecordForm' data-app-id='a-4ff84af0-66c9-0132-142f-22000a8c0328'></camera>
+<camera id='<?= Yii::$app->params['CAMERA_ID_1_CAMERATAG'] ?>' data-app-id='<?= Yii::$app->params['APP_UID_CAMERATAG'] ?>'></camera>
 
 
-<div class="video-form">
+<div class="video-form" style="display:none;">
 
 <?php $form = ActiveForm::begin(); ?>
 
-<?= $form->field($model, 'Uuid')->textInput(['id' => 'id-video']) ?>
+  <?= $form->field($model, 'Uuid')->textInput(['id' => 'id-video','required' => 'required']) ?>
 
   <?= $form->field($model, 'Thumbnail')->textInput(['id' => 'thumbnail-video', 'maxlength' => 2083]) ?>
 

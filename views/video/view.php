@@ -17,7 +17,7 @@ $this->registerJsFile('//cameratag.com/api/v4/js/cameratag.js');
 
     
     <!--<script src='//cameratag.com/api/v4/js/cameratag.js' type='text/javascript'></script>-->
-    <video id='cameraRecordForm' data-uuid='<?= $model->Uuid ?>'></video>
+    <video id='<?= Yii::$app->params['CAMERA_ID_1_CAMERATAG'] ?>' data-uuid='<?= $model->Uuid ?>'></video>
     <br>
     
     <p>
