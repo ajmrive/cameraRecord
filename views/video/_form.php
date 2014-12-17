@@ -7,6 +7,8 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\Video */
 /* @var $form yii\widgets\ActiveForm */
 
+$this->registerJsFile('//cameratag.com/api/v4/js/cameratag.js');
+
 $this->registerJs("
   var j_noConflict = jQuery.noConflict();
   j_noConflict(document).ready(function () {
@@ -25,10 +27,10 @@ $this->registerJs("
       j_noConflict('#timestamp-video').val(myVideo.created_at);
       
 
-      var formats = JSON.parse(JSON.stringify(myVideo.formats.qvga));
+      var formats = JSON.parse(JSON.stringify(myVideo.formats.qvga.thumbnail_url));
       console.log(formats);
 
-      var thumbnail_url = JSON.parse(JSON.stringify(formats.thumbnail_url));
+      var thumbnail_url = formats['thumbnail_url'];
       console.log(thumbnail_url);
       
       var small_thumbnail_url = myVideo.formats.qvga.small_thumbnail_url;
@@ -54,7 +56,7 @@ $this->registerJs("
 ?>
 
 
-<script src='//cameratag.com/api/v4/js/cameratag.js' type='text/javascript'></script>
+<!--<script src='//cameratag.com/api/v4/js/cameratag.js' type='text/javascript'></script>-->
 <camera id='cameraRecordForm' data-app-id='a-4ff84af0-66c9-0132-142f-22000a8c0328'></camera>
 
 

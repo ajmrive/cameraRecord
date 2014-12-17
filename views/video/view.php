@@ -9,13 +9,14 @@ use yii\widgets\DetailView;
 $this->title = $model->Uuid;
 $this->params['breadcrumbs'][] = ['label' => 'Videos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+$this->registerJsFile('//cameratag.com/api/v4/js/cameratag.js');
 ?>
 <div class="video-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     
-    <script src='//cameratag.com/api/v4/js/cameratag.js' type='text/javascript'></script>
+    <!--<script src='//cameratag.com/api/v4/js/cameratag.js' type='text/javascript'></script>-->
     <video id='cameraRecordForm' data-uuid='<?= $model->Uuid ?>'></video>
     <br>
     
