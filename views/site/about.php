@@ -9,7 +9,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        This is the About page. You may modify the following file to customize its content:
+        This is a mini app with Yii2 and cameraRecord API.
     </p>
 
     <code><?= __FILE__ ?></code>
